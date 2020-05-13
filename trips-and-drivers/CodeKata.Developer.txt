@@ -1,0 +1,63 @@
+# Junior Programmer CodeKata
+In the following exercise, you will create a console application that can report on drivers and the trips they've been on. This goal of this project is not only to see if you can implement the solution, but what sorts of practices you use in your coding. We are looking for design patterns, code quality, if you use automated unit tests, and how good your documentation is, do you know how to use source control etc. You do not need to know or demonstrate all of these things, but try pretend this project was going to be a real production application that would have to be maintained and upgraded for years to come.
+
+This project can be completed in either Java or JavaScript. Make sure to add a readme markdown (.md) file with any build/run instructions in the root folder, as well as documentation for the program’s API. If there are any special steps to get the program to compile make sure to include them in it so the evaluator can launch your solution.
+
+The code can be delivered either as a single zipped folder or, better yet, a public git repository. If you create a git repository, make sure to include the zipped folder as a backup.
+
+
+## Option 1: Java
+This project should be compliable/runnable without an IDE, and use Java 1.8 or higher. Make sure that any external libraries are included through a dependency management tool like Ant or Maven. Any unit tests should use JUnit.
+
+## Option 2: JavaScript (ECMA 2016)
+Create either a command line NodeJS application or embed the JavaScript program into a html page. If the latter, you can add a single text input and submit button to the screen, but all output must be plain text and there should be no CSS.
+
+If the project requires any third-party scripts, make sure to include them either through a package manager like NPM or Bower or you can link the scripts from a CDN. Any unit tests should use Jest, Mocha, or Jasmine. If you use WebPack or Babel, make sure to include setup code/instructions so that the evaluator can compile your source and include the transpiled file.
+
+
+# Requirements
+Your program will use an input file to store the results of the user commands and will create reports based on that input file. The file format is specified below. Make sure to include it in your project so that it can be tested in case there are any issues with file paths.
+
+After starting your project with the instruction in your read me file, the user will be able to issue commands that will be able to or remove drivers, create trips, and see a report for those trips. To do that, your program  will need to support the following commands:
+
+## AddDriver [name]
+The AddDriver command will have a name as an argument and will add the driver to the input file.
+- Each Driver should be stored like "Driver,Dan" in the input file
+
+## RemoveDriver [name]
+The RemoveDriver command will remove the driver with a matching name from the input file and any trips with that driver.
+
+## AddTrip [name,start time,stop time,miles driven]
+The AddTrip command will take a name, a start time, an end time, and number of miles driven as arguments. The trip will be added to the input file.
+- These trips will also generate an ID which is printed to the console after the function. Each new ID should be one higher than the current highest trip ID in the file.
+- The trips in the input file should be formatted like "Trip,15,Dan,05-11-2020-18:45,05-12-2020-00:57,215.35"
+
+## RemoveTrip [id]
+The RemoveTrip command will remove the trip with a matching id from the input file. Other trip's IDs should not decrease.
+
+## Report
+The final command creates a report for the Trip which will output the report the console. 
+
+# Report Format
+- The report will print a title of "Driver Report".
+- The reports will display the text for each driver in the following format:
+  - The Driver's name
+  - how total many miles driven: "drove N Miles"
+  - and average speed if he or she drove 1 or more miles: "at an average of N mph"
+- Discard any trips that average a speed of less than 5 mph or greater than 100 mph.
+- Sort the output by miles driven, most to least.
+- Round miles and miles per hour to the nearest integer
+
+# Example input file: TripsAndDriver.txt
+Driver,Dan
+Driver,Alex
+Driver,Bob
+Trip,15,Dan,05-11-2020-18:45,05-12-2020-00:45,215
+Trip,15,Dan,05-13-2020-06:00,05-14-2020-06:15,10
+Trip,15,Alex,05-14-2020-02:00,05-12-2020-03:00,30
+
+# Expected report output to console:
+Driver Report
+Alex drove 225 miles at an average of 53 mph
+Dan drove 10 miles at an average of 30 mph
+Bob drove 0 miles
