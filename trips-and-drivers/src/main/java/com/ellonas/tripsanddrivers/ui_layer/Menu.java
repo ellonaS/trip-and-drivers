@@ -1,4 +1,4 @@
-package com.ellonas.tripsanddrivers.trips_and_drivers;
+package com.ellonas.tripsanddrivers.ui_layer;
 
 import java.math.MathContext;
 import java.util.Scanner;
@@ -19,6 +19,10 @@ public class Menu {
 
 			return inputScanner.nextLine();
 
+		}
+		
+		public void invalidEntry() {
+			System.out.println("Invalid input. Please try Again.");
 		}
 
 }
