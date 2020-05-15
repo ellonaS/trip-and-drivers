@@ -5,8 +5,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 
-import com.ellonas.tripsanddrivers.DriverReport;
-import com.ellonas.tripsanddrivers.Trip;
+import com.ellonas.tripsanddrivers.data_access_layer.DriverReport;
+import com.ellonas.tripsanddrivers.data_access_layer.Trip;
+import com.ellonas.tripsanddrivers.Calendar;
 
 public class Menu {
 
@@ -89,7 +90,7 @@ public class Menu {
 	public void printReport(List<DriverReport> reports) {
 		for (DriverReport report : reports) {
 			System.out.println(report.getName() + " drove " + report.getTotalMiles() + " miles at an average speed of "
-					+ report.getAverageSpeed());
+					+ report.getAverageSpeed() + "mph");
 		}
 	}
 }

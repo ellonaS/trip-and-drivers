@@ -2,7 +2,7 @@ package com.ellonas.tripsanddrivers.ui_layer;
 
 import java.util.List;
 
-import com.ellonas.tripsanddrivers.Trip;
+import com.ellonas.tripsanddrivers.data_access_layer.Trip;
 import com.ellonas.tripsanddrivers.service_layer.ITripsService;
 import com.ellonas.tripsanddrivers.service_layer.TripsManager;
 

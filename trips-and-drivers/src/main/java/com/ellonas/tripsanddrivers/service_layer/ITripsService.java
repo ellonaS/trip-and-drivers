@@ -2,8 +2,8 @@ package com.ellonas.tripsanddrivers.service_layer;
 
 import java.util.List;
 
-import com.ellonas.tripsanddrivers.DriverReport;
-import com.ellonas.tripsanddrivers.Trip;
+import com.ellonas.tripsanddrivers.data_access_layer.DriverReport;
+import com.ellonas.tripsanddrivers.data_access_layer.Trip;
 
 public interface ITripsService {
 	

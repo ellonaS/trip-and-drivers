@@ -2,10 +2,10 @@ package com.ellonas.tripsanddrivers.service_layer;
 
 import java.util.List;
 
-import com.ellonas.tripsanddrivers.DriverReport;
-import com.ellonas.tripsanddrivers.LogFilePrinter;
-import com.ellonas.tripsanddrivers.LogFileReader;
-import com.ellonas.tripsanddrivers.Trip;
+import com.ellonas.tripsanddrivers.data_access_layer.DriverReport;
+import com.ellonas.tripsanddrivers.data_access_layer.LogFilePrinter;
+import com.ellonas.tripsanddrivers.data_access_layer.LogFileReader;
+import com.ellonas.tripsanddrivers.data_access_layer.Trip;
 
 public class TripsManager implements ITripsService {
 

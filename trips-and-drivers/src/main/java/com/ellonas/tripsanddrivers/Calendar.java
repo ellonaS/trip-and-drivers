@@ -1,4 +1,4 @@
-package com.ellonas.tripsanddrivers.ui_layer;
+package com.ellonas.tripsanddrivers;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

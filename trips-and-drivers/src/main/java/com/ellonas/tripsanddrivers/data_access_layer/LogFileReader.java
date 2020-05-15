@@ -1,4 +1,4 @@
-package com.ellonas.tripsanddrivers;
+package com.ellonas.tripsanddrivers.data_access_layer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-import com.ellonas.tripsanddrivers.ui_layer.Calendar;
+import com.ellonas.tripsanddrivers.Calendar;
 
 public class LogFileReader {
 

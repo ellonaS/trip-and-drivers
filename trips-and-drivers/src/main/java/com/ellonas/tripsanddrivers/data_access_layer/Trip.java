@@ -1,4 +1,4 @@
-package com.ellonas.tripsanddrivers;
+package com.ellonas.tripsanddrivers.data_access_layer;
 
 import java.time.LocalDateTime;
 
