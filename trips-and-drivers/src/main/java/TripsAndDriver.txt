@@ -1,0 +1,8 @@
+Driver, Helen
+Driver, Ellona
+Driver, Erick
+Driver, sam
+Driver, Bob
+Trip, 1, Helen, 2020-05-01T06:00, 2020-05-01T12:00, 200
+Trip, 2, sam, 2020-05-01T08:00, 2020-05-01T15:00, 500
+Trip, 3, Sam, 2020-05-01T08:00, 2020-05-01T15:00, 500
