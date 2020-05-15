@@ -88,9 +88,16 @@ public class Menu {
 	}
 
 	public void printReport(List<DriverReport> reports) {
+		
+		System.out.println("Driver Report");
+		
 		for (DriverReport report : reports) {
-			System.out.println(report.getName() + " drove " + report.getTotalMiles() + " miles at an average speed of "
-					+ report.getAverageSpeed() + "mph");
+			String speed = "";
+			if(report.getTotalMiles() >= 1) {
+				speed = " at an average speed of "
+						+ report.getAverageSpeed() + "mph";
+			}
+			System.out.println(report.getName() + " drove " + report.getTotalMiles() + " miles" + speed);
 		}
 	}
 }

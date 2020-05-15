@@ -117,14 +117,14 @@ public class LogFileReader {
 			long speed = report.getTotalMiles() / report.getTotalDrivingTime();
 			report.setAverageSpeed(speed);
 
-			if (speed > 5 && speed < 100) {
-				return report;
+			if (speed < 5 && speed > 100) {
+				return null;
 
 			}
 		} catch (Exception e) {
 			// ignore
 		}
 
-		return null;
+		return report;
 	}
 }
