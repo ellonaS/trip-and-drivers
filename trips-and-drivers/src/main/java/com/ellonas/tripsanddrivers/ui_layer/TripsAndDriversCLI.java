@@ -1,8 +1,15 @@
 package com.ellonas.tripsanddrivers.ui_layer;
 
+import java.util.List;
+
+import com.ellonas.tripsanddrivers.Trip;
+import com.ellonas.tripsanddrivers.service_layer.ITripsService;
+import com.ellonas.tripsanddrivers.service_layer.TripsManager;
+
 public class TripsAndDriversCLI {
 
 	private Menu menu; // create an instance of menu class to run console menu
+	private ITripsService tripsManager = new TripsManager();
 
 	public TripsAndDriversCLI(Menu menu) {
 		this.menu = menu;
@@ -26,25 +33,20 @@ public class TripsAndDriversCLI {
 
 	private void evaluateChoice(String choice) {
 		if (choice.equals("1")) {
-			// add driver
-			System.out.println("You picked 1");
+			tripsManager.addDriver(menu.printAddDriverMenu());
 		}
 
 		else if (choice.equals("2")) {
-			// remove driver
-			System.out.println("You picked 2");
+			displayRemoveDriverMenu();
 
 		} else if (choice.equals("3")) {
-			// add trip
-			System.out.println("You picked 3");
+			displayAddTripMenu();
 
 		} else if (choice.equals("4")) {
-			// remove trip
-			System.out.println("You picked 4");
+			displayRemoveTripMenu();
 
 		} else if (choice.equals("5")) {
-			// print report
-			System.out.println("You picked 5");
+			menu.printReport(tripsManager.getReport());
 
 		} else if (choice.equals("6")) {
 			// Quits the program
@@ -53,6 +55,24 @@ public class TripsAndDriversCLI {
 		} else {
 			menu.invalidEntry();
 		}
+	}
+
+	private void displayRemoveDriverMenu() {
+		List<String> drivers = tripsManager.retrieveListOfDrivers();
+		String choice = menu.printRemoveDriverMenu(drivers);
+		tripsManager.removeDriver(choice);
+	}
+
+	private void displayAddTripMenu() {
+		Trip trip = menu.printAddTripMenu();
+		if (trip != null) {
+			Trip addedTrip = tripsManager.addTrip(trip);
+			System.out.println("Trip log created for trip id " + addedTrip.getId());
+		}
+	}
+	private void displayRemoveTripMenu() {
+		String choice = menu.printRemoveTripMenu();
+		tripsManager.removeDriver(choice);
 	}
 
 }

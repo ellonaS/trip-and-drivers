@@ -13,9 +13,9 @@ public interface ITripsService {
 
 	void removeDriver(String name);
 
-	long addTrip(Trip trip);
+	Trip addTrip(Trip trip);
 
 	void removeTrip(long id);
 
-	List<DriverReport> printReport();
+	List<DriverReport> getReport();
 }

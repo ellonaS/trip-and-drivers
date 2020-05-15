@@ -1,6 +1,6 @@
 package com.ellonas.tripsanddrivers;
 
-public class DriverReport {
+public class DriverReport implements Comparable <DriverReport> {
 
 	private String name;
 	private long totalMiles;
@@ -24,7 +24,7 @@ public class DriverReport {
 	}
 
 	public long getAverageSpeed() {
-		return this.averageSpeed;
+		return averageSpeed;
 	}
 
 	public long getTotalDrivingTime() {
@@ -37,6 +37,13 @@ public class DriverReport {
 
 	public void setAverageSpeed(long averageSpeed) {
 		this.averageSpeed = averageSpeed;
+	}
+
+	@Override
+	public int compareTo(DriverReport o) {
+		int compareMiles = (int) ((DriverReport) o).getTotalMiles();
+		// For Descending order
+		return (int) (compareMiles - this.totalMiles);
 	}
 
 }

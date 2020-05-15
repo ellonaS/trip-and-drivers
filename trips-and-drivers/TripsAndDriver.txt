@@ -1,10 +1,6 @@
-Driver, Dan
-Driver, Bill
-Driver, Ellona
-Driver, Test
-Driver, Test
-Driver, Test7
-Driver, Test
-Driver, Test7
-Driver, Test
-Driver, Test7
+Driver, John
+Driver, Sam
+Trip, 1, Helen, 2020-12-01T12:00, 2020-12-02T22:20, 1000
+Trip, 2, Helen, 2020-12-01T12:00, 2020-12-02T22:20, 1000
+Trip, 3, Helen, 2020-12-01T12:00, 2020-12-02T22:20, 1000
+Trip, 4, Sam, 2020-12-01T12:00, 2020-12-02T22:20, 1000

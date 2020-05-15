@@ -8,45 +8,47 @@ import com.ellonas.tripsanddrivers.LogFileReader;
 import com.ellonas.tripsanddrivers.Trip;
 
 public class TripsManager implements ITripsService {
-	
+
 	private LogFilePrinter logFilePrinter = new LogFilePrinter();
 	private LogFileReader logFileReader = new LogFileReader();
 
 	@Override
 	public void addDriver(String name) {
-		String log = "Driver, " + name;
+		String log = "Driver, " + name; //adding comma for the use of contains method when removing from file
 		logFilePrinter.printLog(log);
-		
+
 	}
 
 	@Override
 	public void removeDriver(String name) {
 		logFilePrinter.removeLog(name);
-		
+
 	}
 
 	@Override
-	public long addTrip(Trip trip) {
-		// TODO Auto-generated method stub
-		return 0;
-		
+	public Trip addTrip(Trip trip) {
+		long tripId = logFileReader.retrieveLastTripIdUsed() + 1;
+		trip.setId(tripId);
+		logFilePrinter.printLog("Trip, " + trip.getId() + ", " + trip.getDriversName() + ", " + trip.getStartTime() + ", "
+				+ trip.getEndTime() + ", " + trip.getMiles());
+		return trip;
+
 	}
 
 	@Override
 	public void removeTrip(long id) {
-		// TODO Auto-generated method stub
-		
+		logFilePrinter.removeLog(" " + String.valueOf(id) + ", ");
 	}
 
 	@Override
-	public List<DriverReport> printReport() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<DriverReport> getReport() {
+		List <DriverReport> reports = logFileReader.retrieveListOfDriverReports();
+		return reports;
 	}
 
 	@Override
 	public List<String> retrieveListOfDrivers() {
-		
+
 		return logFileReader.retrieveListOfDrivers();
 	}
 
